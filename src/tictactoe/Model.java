@@ -12,8 +12,9 @@ package tictactoe;
 class Model
 {
  char boardArray[]={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};	//The array that use the program during the game
- int numberOfClicks=0;
+ int numberOfClicks=0;													//TO COUNT THE NUMBER OF TURNS
  
+//SET THE X OR O IN THE POSITION OF THE BOARD AND ADD ONE TO THE TURNS OF THE GAME
  public void setClick(int position, char XorO)
  {
   System.out.println(position);
@@ -28,11 +29,12 @@ class Model
  {
     numberOfClicks=0;
     char boardOrig[] ={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};		//The original board that is use to resert the game
-    System.arraycopy(boardOrig, 1, boardArray, 1, 9);
+    System.arraycopy(boardOrig, 1, boardArray, 1, 9);							//Reset the boardArray copying boardOrig
     currentBoard();
 
  }
  
+// PRINT THE CURREANT BOARD IN THE CONSOLE
 public  String currentBoard()
 {
    //System.out.println( "\n\n" );
