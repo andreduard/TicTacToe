@@ -11,14 +11,13 @@ package tictactoe;
  */
 class Model
 {
- char array2[]={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
+ char boardArray[]={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};	//The array that use the program during the game
  int numberOfClicks=0;
  
  public void setClick(int position, char XorO)
  {
   System.out.println(position);
-  array2[position]=XorO; // ADD 1 OR 2 TO ARRAY POSITION
-  System.out.println(array2[position]);
+  boardArray[position]=XorO; // ADD 1 OR 2 TO ARRAY POSITION
   numberOfClicks++; // INCREMENT GAME TURNS
 
  }
@@ -28,8 +27,8 @@ class Model
  public void resetGame()
  {
     numberOfClicks=0;
-    char array[] ={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    System.arraycopy(array, 1, array2, 1, 9);
+    char boardOrig[] ={'0','1', '2', '3', '4', '5', '6', '7', '8', '9'};		//The original board that is use to resert the game
+    System.arraycopy(boardOrig, 1, boardArray, 1, 9);
     currentBoard();
 
  }
@@ -38,13 +37,13 @@ public  String currentBoard()
 {
    //System.out.println( "\n\n" );
    //System.out.println(  "\n\n" );
-   System.out.println(  "\n\n\t\t" + array2 [1] + "   | " +array2 [2]+ "  | " + array2 [3]);
+   System.out.println(  "\n\n\t\t" + boardArray [1] + "   | " +boardArray [2]+ "  | " + boardArray [3]);
    System.out.println(  " \t\t    |    |   " );
    System.out.println(  " \t\t ___|____|___ " );
-   System.out.println(  "\n\n\t\t" + array2 [4] + "   | " + array2 [5] + "  | " + array2 [6]);
+   System.out.println(  "\n\n\t\t" + boardArray [4] + "   | " + boardArray [5] + "  | " + boardArray [6]);
    System.out.println(  " \t\t    |    |   " );
    System.out.println(  " \t\t ___|____|___ " );
-   System.out.println(  "\n\n\t\t" + array2 [7] + "   | " +  array2 [8] + "  | " + array2 [9]);
+   System.out.println(  "\n\n\t\t" + boardArray [7] + "   | " +  boardArray [8] + "  | " + boardArray [9]);
    System.out.println(  " \t\t    |    |   " );
    System.out.println(  " \t\t    |    |   " );
    System.out.println(  "\n\n" );
@@ -57,44 +56,44 @@ public  String currentBoard()
  public int getResult()
  { 
   //HORI TEST
-    if (array2[1]=='X' && array2[2]=='X' && array2[3]=='X')
+    if (boardArray[1]=='X' && boardArray[2]=='X' && boardArray[3]=='X')
         return 1;
-    if (array2[1]=='O' && array2[2]=='O' && array2[3]=='O')
+    if (boardArray[1]=='O' && boardArray[2]=='O' && boardArray[3]=='O')
         return 2;
-    if (array2[4]=='X' && array2[5]=='X' && array2[6]=='X')
+    if (boardArray[4]=='X' && boardArray[5]=='X' && boardArray[6]=='X')
         return 1;
-    if (array2[4]=='O' && array2[5]=='O' && array2[6]=='O')
+    if (boardArray[4]=='O' && boardArray[5]=='O' && boardArray[6]=='O')
         return 2;
-    if (array2[7]=='X' && array2[8]=='X' && array2[9]=='X')
+    if (boardArray[7]=='X' && boardArray[8]=='X' && boardArray[9]=='X')
         return 1;
-    if (array2[7]=='O' && array2[8]=='O' && array2[9]=='O')
+    if (boardArray[7]=='O' && boardArray[8]=='O' && boardArray[9]=='O')
         return 2;
   
    
   // VERT TEST
 
-    if (array2[1]=='X' && array2[4]=='X' && array2[7]=='X')
+    if (boardArray[1]=='X' && boardArray[4]=='X' && boardArray[7]=='X')
         return 1; 
-    if (array2[1]=='O' && array2[4]=='O' && array2[7]=='O')
+    if (boardArray[1]=='O' && boardArray[4]=='O' && boardArray[7]=='O')
      return 2; 
-    if (array2[2]=='X' && array2[5]=='X' && array2[8]=='X')
+    if (boardArray[2]=='X' && boardArray[5]=='X' && boardArray[8]=='X')
         return 1;
-    if (array2[2]=='O' && array2[5]=='O' && array2[8]=='O')
+    if (boardArray[2]=='O' && boardArray[5]=='O' && boardArray[8]=='O')
         return 2;
-    if (array2[3]=='X' && array2[6]=='X' && array2[9]=='X')
+    if (boardArray[3]=='X' && boardArray[6]=='X' && boardArray[9]=='X')
         return 1;
-    if (array2[3]=='O' && array2[6]=='O' && array2[9]=='O')
+    if (boardArray[3]=='O' && boardArray[6]=='O' && boardArray[9]=='O')
         return 2;
    
   //DIAGONAL TEST
   
-    if (array2[1]=='X' && array2[5]=='X' && array2[9]=='X')
+    if (boardArray[1]=='X' && boardArray[5]=='X' && boardArray[9]=='X')
         return 1;
-    if (array2[1]=='O' && array2[5]=='O' && array2[9]=='O')
+    if (boardArray[1]=='O' && boardArray[5]=='O' && boardArray[9]=='O')
         return 2;
-    if (array2[3]=='X' && array2[5]=='X' && array2[7]=='X')
+    if (boardArray[3]=='X' && boardArray[5]=='X' && boardArray[7]=='X')
         return 1;
-    if (array2[3]=='O' && array2[5]=='O' && array2[7]=='O')
+    if (boardArray[3]=='O' && boardArray[5]=='O' && boardArray[7]=='O')
         return 2;
   
   if (numberOfClicks==9)
